@@ -1,3 +1,13 @@
+:root {
+    --open-sans: 'OpenSans', sans-serif;
+    --nunito-sans: 'Nunito Sans', sans-serif;
+
+    --accent-light: #fbb731;
+    --accent-dark: #f37335;
+    --dark: #443737;
+    --light: #ffffff;
+}
+
 @font-face {
     font-family: 'OpenSans', Arial, sans-serif;
     src: url('fonts/OpenSans-Regular.ttf') format('ttf');
@@ -29,6 +39,97 @@
 }
 
 body {
-    font-family: 'OpenSans', sans-serif;
-    /* font-family: 'Nunito Sans', sans-serif; */
+    font-family: var(--open-sans);
+}
+
+.container {
+    width: 100%;
+    max-width: 1182px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 196px;
+    padding: 26px 0;
+}
+
+.logo {
+    /* Ссылку на логотип делаем в main.css вместо index.html что бы задать еще полезные св-ва для логотипа  */
+    display: block;
+    width: 176px;
+    height: 56px;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+
+    /* это свойство полезно для адаптации логотипа при изменении размеров */
+    background-size: contain;
+}
+
+.nav {
+    flex-grow: 1;
+    display: flex;
+    gap: 46px;
+}
+
+.nav-link {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.nav-link::after {
+    /* свойство content: ''; - нужно обязательно для работы псевдоэлемента */
+    content: '';
+    /* Пседоэлемент (линия подчеркивания) будет снизу ссылки */
+    display: block;
+    /* На всю ширину блока(текста) ссылки */
+    width: 100%;
+    /* Высота псевдоэлемента (толщина линии) - 3 px */
+    height: 3px;
+    /* В обычном состоянии псевдоэлемент (лигия подчеркивания) - прозрачный */
+    background-color: transparent;
+    /* Скругление торцов псевдоэлемента(линии) */
+    border-radius: 1.5px;
+}
+/* При наведении на ссылку появляется оранжевое подчеркивание */
+.nav-link:hover::after {
+    background-color: var(--accent-light);
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* Иконка корзины перед текстом цены, то делаем как псевдоэлемент со значением before */
+.cart::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 26px;
+    background-image: url(../images/cart.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.cart-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    width: 17px;
+    height: 17px;
+    color: var(--light);
+    background-color: var(--accent-dark);
+    border-radius: 100%;
 }
