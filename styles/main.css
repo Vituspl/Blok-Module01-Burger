@@ -436,7 +436,6 @@ a {
   font-size: 30px;
   line-height: 127%;
   color: var(--dark);
-  /* flex-grow: 1; */
 }
 
 .menu-price {
@@ -906,7 +905,7 @@ a {
   .footer-title {
     font-size: 18px;
   }
-  .footer-nav{
+  .footer-nav {
     margin-bottom: 0;
   }
 }
