@@ -2,35 +2,35 @@
   --open-sans: 'OpenSans', sans-serif;
   --nunito-sans: 'Nunito Sans', sans-serif;
   --roboto: 'Roboto', sans-serif;
-
   --accent-light: #fbb731;
   --accent-dark: #f37335;
   --footer: #1e2f40;
   --dark: #443737;
-  --light: #ffffff;
+  --light: #fff;
   --line: #dedede;
   --light-rgb: 255, 255, 255;
   --price-rgb: 68, 55, 55;
-
   --tr: 0.3s;
 }
 
 @font-face {
-  font-family: 'OpenSans', Arial, sans-serif;
+  font-family: OpenSans, Arial, sans-serif;
   src: url('./fonts/OpenSans-Regular.ttf') format('ttf');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
 }
+
 @font-face {
-  font-family: 'OpenSans', Arial, sans-serif;
+  font-family: OpenSans;
   src: url('./fonts/OpenSans-Bold.ttf') format('ttf');
   font-style: normal;
   font-weight: 700;
   font-display: swap;
 }
+
 @font-face {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: Roboto, Arial, sans-serif;
   src: url('./fonts/static/Roboto-Regular.woff2') format('woff2');
   font-style: normal;
   font-weight: 400;
@@ -38,16 +38,16 @@
 }
 
 @font-face {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: Roboto;
   src: url('./fonts/static/Roboto-Bold.woff2') format('woff2');
   font-style: normal;
   font-weight: 700;
   font-display: swap;
 }
 
-/* html {
-    scroll-behavior: smooth;
-} */
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--open-sans);
@@ -63,6 +63,7 @@ a {
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
+
   /* Адаптив для desctop-first */
   box-sizing: border-box;
 }
@@ -75,6 +76,7 @@ a {
 .header-wrapper {
   display: flex;
   align-items: center;
+
   /* gap: 196px; */
   gap: 56px;
   padding: 26px 0;
@@ -84,7 +86,7 @@ a {
   display: none;
   width: 34px;
   height: 22px;
-  background-image: url(../images/icons/burger-menu.svg);
+  background-image: url('../images/icons/burger-menu.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
@@ -96,7 +98,7 @@ a {
   display: block;
   width: 176px;
   height: 56px;
-  background-image: url(../images/logo.svg);
+  background-image: url('../images/logo.svg');
   background-repeat: no-repeat;
 
   /* это свойство полезно для адаптации логотипа при изменении размеров */
@@ -108,6 +110,7 @@ a {
   flex-grow: 1;
   display: flex;
   gap: 46px;
+
   /* margin-left: min(10vm, 140px); */
   margin-left: 140px;
 }
@@ -122,17 +125,23 @@ a {
 .nav-link::after {
   /* свойство content: ''; - нужно обязательно для работы псевдоэлемента */
   content: '';
+
   /* Пседоэлемент (линия подчеркивания) будет снизу ссылки */
   display: block;
+
   /* На всю ширину блока(текста) ссылки */
   width: 100%;
+
   /* Высота псевдоэлемента (толщина линии) - 3 px */
   height: 3px;
+
   /* В обычном состоянии псевдоэлемент (лигия подчеркивания) - прозрачный */
   background-color: transparent;
+
   /* Скругление торцов псевдоэлемента(линии) */
   border-radius: 1.5px;
 }
+
 /* При наведении на ссылку появляется оранжевое подчеркивание */
 .nav-link:hover::after {
   background-color: var(--accent-light);
@@ -154,7 +163,7 @@ a {
   display: block;
   width: 30px;
   height: 26px;
-  background-image: url(../images/icons/cart.svg);
+  background-image: url('../images/icons/cart.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -209,7 +218,7 @@ a {
 
 /* Block Hero */
 .hero {
-  background-image: url(../images/hero.webp);
+  background-image: url('../images/hero.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -222,7 +231,7 @@ a {
 }
 
 .hero-contact {
-  background-image: url(../images/hero-contact.webp);
+  background-image: url('../images/hero-contact.webp');
 }
 
 .breadcrumbs {
@@ -232,7 +241,7 @@ a {
   gap: 16px;
   list-style-type: none;
   padding-left: 0;
-  color: rgba(var(--light-rgb), 0.5);
+  color: rgb(var(--light-rgb), 0.5);
   font-size: 15px;
   margin-top: 0;
   margin-bottom: 0;
@@ -249,7 +258,7 @@ a {
 }
 
 .breadcrumbs-link {
-  color: rgba(var(--light-rgb), 0.5);
+  color: rgb(var(--light-rgb), 0.5);
 }
 
 .breadcrumbs-link:hover {
@@ -259,9 +268,11 @@ a {
 .hero-title {
   color: var(--light);
   font-family: var(--roboto);
-  /* font-size: 79px; */
+
+  /* font-size: 80px; */
+
   /* Отзывчивая типографика */
-  font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem);
+  font-size: clamp(2.5rem, 5vw + 0.625rem, 5rem);
   font-style: normal;
   font-weight: 700;
   text-transform: capitalize;
@@ -272,7 +283,7 @@ a {
 .hero-description {
   max-width: 320px;
   margin: 0 auto;
-  color: rgba(var(--light-rgb), 0.8);
+  color: rgb(var(--light-rgb), 0.8);
   font-family: var(--open-sans);
   font-size: 15px;
   line-height: 160%;
@@ -285,7 +296,7 @@ a {
 }
 
 .banner-wrapper {
-  background-image: url(../images/banner.webp);
+  background-image: url('../images/banner.webp');
   background-repeat: no-repeat;
   background-size: cover;
   padding: 100px;
@@ -326,7 +337,7 @@ a {
   font-size: 15px;
   font-style: normal;
   line-height: 160%;
-  color: rgba(var(--light-rgb), 0.8);
+  color: rgb(var(--light-rgb), 0.8);
 }
 
 .banner-btn {
@@ -365,6 +376,7 @@ a {
   margin-bottom: 0;
   font-family: var(--font-family);
   font-weight: 700;
+
   /* font-size: 44px; */
   font-size: clamp(1.5rem, 2vw + 0.75rem, 2.5rem);
   line-height: 127%;
@@ -380,10 +392,11 @@ a {
        В нашем случае - стрелка-вниз(chevron-down) */
   appearance: none;
   flex-basis: 279px;
-  background-image: url(../images/chevron-down.svg);
+  background-image: url('../images/chevron-down.svg');
   background-repeat: no-repeat;
   background-size: 14px 10px;
   background-position: 89% center;
+
   /* width: 279px;
     height: 44px; */
   padding: 13px 30px;
@@ -409,6 +422,7 @@ a {
   width: 100%;
   height: 100%;
   position: absolute;
+
   /* Размещаем фото по ценру */
   left: 50%;
   top: 50%;
@@ -446,7 +460,8 @@ a {
 }
 
 .menu-price {
-  margin-top: 0px;
+  margin-top: 0;
+
   /* margin-top: auto; */
   margin-bottom: 20px;
   text-align: center;
@@ -454,11 +469,12 @@ a {
   font-weight: 700;
   font-size: 20px;
   line-height: 140%;
-  color: rgba(var(--price-rgb), 0.5);
+  color: rgb(var(--price-rgb), 0.5);
 }
 
 .menu-btn {
   display: flex;
+
   /* width: 152px;
     height: 38px;     */
   align-items: center;
@@ -473,6 +489,7 @@ a {
   padding: 11px 32px;
   text-transform: uppercase;
   text-decoration: none;
+
   /* margin-left: 114px; */
   border-radius: 5px;
   border: none;
@@ -482,11 +499,12 @@ a {
 
 .menu-btn::before {
   content: '';
+
   /* margin-left: 30px; */
   margin-right: 5px;
   width: 20px;
   height: 20px;
-  background-image: url(../images/icons/cart2.svg);
+  background-image: url('../images/icons/cart2.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -513,7 +531,7 @@ a {
   display: block;
   width: 63px;
   height: 56px;
-  background-image: url(../images/logo_light_min.svg);
+  background-image: url('../images/logo_light_min.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -536,7 +554,7 @@ a {
 }
 
 .footer-link {
-  color: rgba(var(--light-rgb), 0.9);
+  color: rgb(var(--light-rgb), 0.9);
   font-size: 15px;
   line-height: 160%;
   transition: var(--tr);
@@ -564,7 +582,7 @@ a {
 
 .footer-list-item span {
   display: block;
-  color: rgba(var(--light-rgb), 0.9);
+  color: rgb(var(--light-rgb), 0.9);
   font-weight: 400;
 }
 
@@ -610,6 +628,7 @@ a {
 
 .contact-adress {
   flex-basis: calc(100% - 680px - 20px);
+
   /* Сброс предустановок стилей */
   list-style-type: none;
   padding-left: 0;
@@ -666,14 +685,16 @@ a {
   background-size: cover;
 }
 
-.contact-additionally > li:nth-child(1):before {
-  background-image: url(../images/contact/01.svg);
+.contact-additionally > li:nth-child(1)::before {
+  background-image: url('../images/contact/01.svg');
 }
-.contact-additionally > li:nth-child(2):before {
-  background-image: url(../images/contact/02.svg);
+
+.contact-additionally > li:nth-child(2)::before {
+  background-image: url('../images/contact/02.svg');
 }
-.contact-additionally > li:nth-child(3):before {
-  background-image: url(../images/contact/03.svg);
+
+.contact-additionally > li:nth-child(3)::before {
+  background-image: url('../images/contact/03.svg');
 }
 
 .contact-info,
@@ -700,6 +721,7 @@ a {
   .header-wrapper {
     gap: 40px;
   }
+
   .nav {
     margin-left: 0;
     gap: min(3vm, 30px);
@@ -711,39 +733,49 @@ a {
     width: 150px;
     height: 48px;
   }
+
   .header-wrapper {
     gap: 45px;
   }
+
   .nav {
     gap: 22px;
   }
+
   .banner {
     margin-top: 72px;
   }
+
   .banner-wrapper {
     padding: 100px 40px;
   }
+
   .menu-header {
     margin-top: 80px;
   }
+
   .menu-box {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .menu-name._additionally,
   .menu-content._additionally {
     display: none;
   }
+
   .menu-box._additionally {
     grid-template-columns: 1fr;
   }
+
   .menu-item._additionally {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 20px;
   }
+
   .menu-item._additionally .menu-thumb {
-    flex-basis: calc(60%-20px);
+    flex-basis: calc(60% - 20px);
     height: 260px;
     margin-bottom: 0;
   }
@@ -752,6 +784,7 @@ a {
     display: block;
     flex-basis: 40%;
   }
+
   .menu-name._additionally {
     font-size: 24px;
   }
@@ -768,6 +801,7 @@ a {
   .footer-tel {
     display: none;
   }
+
   .footer-tel._mobile {
     display: block;
     text-align-last: left;
@@ -780,19 +814,24 @@ a {
     padding-top: 19px;
     padding-bottom: 19px;
   }
+
   .nav {
     display: none;
   }
+
   .nav._modal {
     display: flex;
     flex-direction: column;
   }
+
   .nav-link::after {
     display: none;
   }
+
   .burger-menu {
     display: block;
   }
+
   .logo {
     width: 116px;
     height: 37px;
@@ -813,11 +852,12 @@ a {
     text-align: center;
     transition: 0.5s;
   }
+
   .modal-close {
     display: block;
     width: 22px;
     height: 22px;
-    background-image: url(../images/icons/close1.svg);
+    background-image: url('../images/icons/close1.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
@@ -826,46 +866,58 @@ a {
     top: 20px;
     right: 20px;
   }
+
   .hero {
     padding-top: 57px;
     padding-bottom: 55px;
   }
+
   .breadcrumbs {
     font-size: 14px;
   }
+
   .hero-title {
     /* font-size: 38px; */
     margin-top: 28px;
     margin-bottom: 13px;
   }
+
   .hero-description {
     font-size: 12px;
     line-height: 166%;
   }
+
   .banner {
     margin-top: 33px;
   }
+
   .banner-wrapper {
-    padding: 36px 15px 30px 15px;
+    padding: 36px 15px 30px;
   }
+
   .banner-title {
     margin-bottom: 9px;
   }
+
   .banner-description {
     font-size: 14px;
     margin-bottom: 20px;
     max-width: 220px;
   }
+
   .banner-btn {
     max-width: 198px;
   }
+
   .menu-header {
     margin-top: 58px;
     margin-bottom: 30px;
   }
+
   .menu-title {
-    /* font-size: 27px; */
+    font-size: 27px;
   }
+
   .menu-select {
     font-size: 12px;
     flex-basis: 136px;
@@ -873,61 +925,75 @@ a {
     background-position: 93% center;
     padding: 13px 15px;
   }
+
   .menu-box {
     gap: 24px 20px;
   }
+
   .menu-thumb {
     height: 50vw;
     margin-bottom: 10px;
   }
+
   .menu-item._additionally .menu-thumb {
     height: 38vw;
   }
+
   .menu-name {
     font-size: 14px;
     font-weight: 700;
     margin-bottom: 8px;
   }
+
   .menu-price {
     font-size: 15px;
     font-weight: 700;
     margin-bottom: 14px;
   }
+
   .menu-btn {
     padding: 11px 22px;
   }
+
   .footer {
     margin-top: 80px;
   }
+
   .footer-wrapper {
     flex-direction: column;
     gap: 35px;
     position: relative;
   }
+
   .footer-logo {
     margin-bottom: 9px;
   }
+
   .footer-tel._mobile {
     position: absolute;
     top: -13px;
     right: 0;
   }
+
   .footer-tel._mobile + .footer-tel._mobile {
     top: 24px;
   }
+
   .footer-title {
     font-size: 18px;
   }
+
   .footer-nav {
     margin-bottom: 0;
   }
 }
 
-@media (max-width: 450px) {
+@media (width <= 450px) {
   .menu-item._additionally .menu-thumb {
     flex-basis: calc(100% - 130px - 20px);
     height: 38vw;
   }
+
   .menu-item._additionally .menu-info {
     flex-basis: 130px;
   }

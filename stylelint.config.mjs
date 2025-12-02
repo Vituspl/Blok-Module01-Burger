@@ -1,0 +1,7 @@
+/** @type {import('stylelint').config} */
+export default {
+  extends: ['stylelint-config-standard'],
+  rules: {
+    'number-leading-zero': 'always',
+  },
+};

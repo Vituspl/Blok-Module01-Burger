@@ -13,3 +13,21 @@
 - HTML
 - CSS (переменные, flexbox, grid)
 - JavaScript
+
+**Установки линтеров**
+
+npm i -D eslint
+
+npm i -D stylelint stylelint-config-standard
+
+npm i -D prettier
+
+**Конфигурации линтеров**
+
+файл eslint.config.mjs - конфигурация eslinter;
+файл stylelint.config.mjs - конфигурация stylelint;
+файл .prettierc - конфигурация prettier;
+
+**Запуск провурки линтерами**
+
+npm run lint:fix - полная проверка с фиксами.
